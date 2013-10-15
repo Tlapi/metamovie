@@ -1,0 +1,25 @@
+<div class="hero-unit">
+    <form action="" method="get">
+    	<input type="text" name="query" />
+    	<input type="submit" value="search" />
+    </form>
+</div>
+
+<?php if($this->results){?>
+	<?php foreach($this->results as $result){?>
+	<div class="well">
+		<?php echo $result->getId()?>
+		<?php foreach($result->getHighlights()['content'] as $highlight){?>
+			<div>
+				<?php echo $highlight?>
+			</div>
+		<?php }?>
+	</div>
+	<?php }?>
+<?php }?>
+
+<style>
+.highlight{
+	background-color: yellow;	
+}
+</style>
