@@ -1,0 +1,14 @@
+{
+   "query": {
+      "multi_match" : {
+        "query" : "Munich",
+        "fields" : [ "content","name^4","directed_by.director_name","starring.actor_name","music_by.musician_name","story_by.storyby_name","written_by.writer_name", "genres.genre_name", "description^2"]
+      }
+   },
+   "highlight" : {
+        "fields" : {
+            "content" : {"fragment_size" : 150, "number_of_fragments" : 3},
+            "name" : {"fragment_size" : 150, "number_of_fragments" : 3}
+        }
+    }
+}
